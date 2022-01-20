@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Cache-Control" content="private, must-revalidate, max-age=0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TEST</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+        <script src="https://d3kjdk8bsa0don.cloudfront.net/html5/modernizr-custom.js"></script>
+        <script>
+
+            var APP_ID = "";		// Test App
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: APP_ID,
+                    cookie: true,
+                    status: true,
+                    oauth: true,
+                    xfbml: true,
+                    version: "v7.0",
+                    frictionlessRequests: true
+                });
+
+                if (window.preloaderStartListener) window.preloaderStartListener();
+            };
+
+            (function (d, s, id) {
+                const fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                const js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                js.async = false;
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, "script", "facebook-jssdk"));
+
+        </script>
+    </head>
+
+    <body>
+        <script data-main="/test.js"
+            src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    </body>
+</html>
